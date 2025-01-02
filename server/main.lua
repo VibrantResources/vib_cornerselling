@@ -61,14 +61,6 @@ RegisterNetEvent('cornerselling:server:SellDrugs', function(chosenDrugToSell, ra
         if exports.ox_inventory:CanCarryItem(source, 'black_money', randomDrugPrice) then
             if exports.ox_inventory:RemoveItem(source, chosenDrugToSell.item, randomDrugAmount) then
                 exports.ox_inventory:AddItem(source, 'black_money', randomDrugPrice)
-
-                exports["vib-lib"]:economy({
-                    ["resource"] = GetCurrentResourceName(), 
-                    ["action"] = 'CornerSelling', 
-                    ["rewardItem"] = 'black_money', 
-                    ["amount"] = randomDrugPrice, 
-                    ["source"] = source
-                })
             end
         end
 
